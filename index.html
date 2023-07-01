@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const fetch = async () => {
+        const res = await fetch("/api/hello");
+        const data = await res.json();
+        return data;
+      };
+      const data = fetch();
+      const element = document.getElementById("h1");
+      element.innerText += data.name;
+    </script>
+  </head>
+  <body>
+    <h1 id="h1">Hello &nbsp;</h1>
+  </body>
+</html>
