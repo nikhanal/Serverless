@@ -7,14 +7,14 @@
   <body>
     <h1 id="h1">Hello &nbsp;</h1>
     <script>
+      let data;
       const fetchdata = async () => {
         const res = await fetch("/api/hello");
         console.log(res);
-        const data = await res.json();
+        data = await res.json();
         console.log(data);
-        return data;
       };
-      const data = fetchdata();
+      fetchdata();
       const element = document.getElementById("h1");
       element.innerText += data.name;
     </script>
